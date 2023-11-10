@@ -154,13 +154,6 @@ async function subscribe(user, mediaType) {
   `);
     $("#remote-playerlist2").append(player2);
     $("#custom-player")[0].srcObject = stream;
-
-    // Interim rehabilitation programme
-    // user.videoTrack.on("transceiver-updated", () => {
-    //   const originMediaStreamTrack = user.videoTrack.getMediaStreamTrack();
-    //   const stream = new MediaStream([originMediaStreamTrack]);
-    //   $("#custom-player")[0].srcObject = stream;
-    // });
   }
   if (mediaType === "audio") {
     user.audioTrack.play();
