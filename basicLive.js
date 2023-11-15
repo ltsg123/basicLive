@@ -154,6 +154,11 @@ async function subscribe(user, mediaType) {
   `);
     $("#remote-playerlist2").append(player2);
     $("#custom-player")[0].srcObject = stream;
+
+    user.videoTrack.on("track-updated", (track) => {
+      console.log("track-updated", track);
+      $("#custom-player")[0].srcObject = new MediaStream([track]);
+    });
   }
   if (mediaType === "audio") {
     user.audioTrack.play();
